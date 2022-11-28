@@ -1,6 +1,13 @@
 {
   "configs": [
-    "uhub-sapi.xml"
+    "implementations/register-covid-case.xml",
+    "implementations/update-covid-case.xml",
+    "uhub-sapi.xml",
+    "implementations/get-covid-reports.xml",
+    "implementations/health-check.xml",
+    "global-error-handling.xml",
+    "implementations/get-covid-case-by-national-id.xml",
+    "global-configuration.xml"
   ],
   "secureProperties": [],
   "redeploymentEnabled": true,
@@ -13,6 +20,7 @@
       "exportedPackages": [],
       "exportedResources": [
         "log4j2.xml",
+        "global-error-handling.xml",
         "uhub-sapi.xml",
         "api/uhub-sapi.raml",
         "api/exchange_modules/99fdd732-6029-4a59-9011-d08a58f8b0c8/resource-types/1.0.1/resource-types.raml",
@@ -29,7 +37,13 @@
         "api/examples/get-reports-response.json",
         "api/examples/get-cases-by-national-id-response.json",
         "api/uhub-sapi-types/uhub-sapi-types.raml",
-        "api/uhub-sapi-types/state-query-param.raml"
+        "api/uhub-sapi-types/state-query-param.raml",
+        "implementations/health-check.xml",
+        "implementations/get-covid-reports.xml",
+        "implementations/register-covid-case.xml",
+        "implementations/update-covid-case.xml",
+        "implementations/get-covid-case-by-national-id.xml",
+        "global-configuration.xml"
       ]
     }
   },
