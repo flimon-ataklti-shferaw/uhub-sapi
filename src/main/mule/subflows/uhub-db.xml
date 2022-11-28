@@ -18,4 +18,15 @@ DATE_FORMAT(:create_date, "%Y-%m-%d"),DATE_FORMAT(:update_date, "%Y-%m-%d"), :cr
 		</db:insert>
 		<logger level="INFO" doc:name="end log" doc:id="b7be47f4-c161-4c5f-8569-cacc3b91b0c8" message='transactionId: #[vars.transactionId], correlationId: #[vars.correlationId], message: "Completed insert case database call"'/>
 	</sub-flow>
+	<sub-flow name="update-covid-case-sub-flow" doc:id="3b6adfd5-f2ba-486d-acc3-a635ca4f1998" >
+		<logger level="INFO" doc:name="Start log" doc:id="1e692973-ff39-43e9-b1e4-384676b341bc" message='transactionID: #[vars.transactionId]], correlationID: #[vars.correlationID], message: "Before update case database call", payload: #[payload]'/>
+		<db:update doc:name="Update Covid Case Master" doc:id="bfc0974c-af09-4ad6-a66d-41b2d5ae2484" config-ref="Uhub_Database_Config">
+			<db:sql ><![CDATA[update cvd_case_master set source=:source, case_type=:case_type, first_name=:first_name, last_name=:last_name, phone=:phone,
+email=:email, date_of_birth=DATE_FORMAT(:date_of_birth, "%Y-%m-%d"), national_id=:national_id, national_id_type=:national_id_type, 
+street_address=:street_address, city=:city, state=:state, postal=:postal, country=:country, update_date=DATE_FORMAT(:update_date, "%Y-%m-%d"), 
+create_by=:create_by, update_by=:update_by where CASE_ID=:case_id]]></db:sql>
+			<db:input-parameters ><![CDATA[#[vars.covidCasePayload]]]></db:input-parameters>
+		</db:update>
+		<logger level="INFO" doc:name="end log" doc:id="e47e3acc-1ab8-41a6-a0a3-4d1b7146c8dc" message='transactionID: #[vars.transactionId]], correlationID: #[vars.correlationID], message: "Completed update case database call"'/>
+	</sub-flow>
 	</mule>
