@@ -39,4 +39,11 @@ create_by=:create_by, update_by=:update_by where CASE_ID=:case_id]]></db:sql>
 		</db:select>
 		<logger level="INFO" doc:name="End Log" doc:id="64a13fa7-58ce-46ae-8d75-bc0f8b0f78d3" message='transactionID: #[vars.transactionId]], correlationID: #[vars.correlationID], message: Completed fetch case by national id database call"'/>
 	</sub-flow>
+	<sub-flow name="fetch-case-reports-sub-flow" doc:id="023252dc-bbbd-4328-96f9-9396721452ad" >
+		<logger level="INFO" doc:name="Start Log" doc:id="98918481-57c3-4aba-b6ba-5b61ecbb0f64" message='transactionID: #[vars.transactionId]], correlationID: #[vars.correlationID], message: Before fetching case reports database call"'/>
+		<db:select doc:name="Select Case Reports" doc:id="1c1c2525-a3ad-48eb-b4d3-8c3addcf90ff" config-ref="Uhub_Database_Config">
+			<db:sql ><![CDATA[#["$(vars.reportsDynamicQuery)"]]]></db:sql>
+		</db:select>
+		<logger level="INFO" doc:name="End Log" doc:id="873bef93-46f0-48aa-9794-50625821ce33" message='transactionID: #[vars.transactionId]], correlationID: #[vars.correlationID], message: Completed fetch case reports database call"'/>
+	</sub-flow>
 	</mule>
