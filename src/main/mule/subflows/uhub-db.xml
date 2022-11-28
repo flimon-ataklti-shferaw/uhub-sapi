@@ -29,4 +29,14 @@ create_by=:create_by, update_by=:update_by where CASE_ID=:case_id]]></db:sql>
 		</db:update>
 		<logger level="INFO" doc:name="end log" doc:id="e47e3acc-1ab8-41a6-a0a3-4d1b7146c8dc" message='transactionID: #[vars.transactionId]], correlationID: #[vars.correlationID], message: "Completed update case database call"'/>
 	</sub-flow>
+	<sub-flow name="fetch-case-by-national-id-sub-flow" doc:id="b521ff10-6432-40d4-ae68-b3347ffb5455" >
+		<logger level="INFO" doc:name="Start Log" doc:id="91fa1d58-7cce-4c0c-8487-95394e4dc373" message='transactionID: #[vars.transactionId]], correlationID: #[vars.correlationID], message: Before fetching case by national id database call"'/>
+		<db:select doc:name="Select Case by NationalID" doc:id="ea4ed5fe-457f-46f5-b8ca-75d4af2741fe" config-ref="Uhub_Database_Config">
+			<db:sql ><![CDATA[select case_id, source, case_type, first_name, last_name, phone, email, date_of_birth, national_id, national_id_type, street_address, city, state, postal, country, create_date, update_date from cvd_case_master where national_id = :national_id]]></db:sql>
+			<db:input-parameters ><![CDATA[#[{
+	national_id: vars.nationalID
+}]]]></db:input-parameters>
+		</db:select>
+		<logger level="INFO" doc:name="End Log" doc:id="64a13fa7-58ce-46ae-8d75-bc0f8b0f78d3" message='transactionID: #[vars.transactionId]], correlationID: #[vars.correlationID], message: Completed fetch case by national id database call"'/>
+	</sub-flow>
 	</mule>
