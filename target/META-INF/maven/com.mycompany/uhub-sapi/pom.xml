@@ -18,6 +18,64 @@
 		<app.runtime>4.4.0-20220824</app.runtime>
 		<mule.maven.plugin.version>3.8.0</mule.maven.plugin.version>
 	</properties>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.mule.tools.maven</groupId>
+						<artifactId>mule-maven-plugin</artifactId>
+						<version>${mule.maven.plugin.version}</version>
+						<extensions>true</extensions>
+						<configuration>
+							<cloudHubDeployment>
+								<applicationName>uho-dev-uhub-sapi-teliyadu</applicationName>
+								<environment>dev</environment>
+								<region>us-east-1 </region>
+								<workers>1</workers>
+								<workerType>MICRO</workerType>
+								<properties>
+									<env>dev</env>
+									<api.id>18333962</api.id>
+									<anypoint.platform.client_id>${anypoint.platform.client_id}</anypoint.platform.client_id>
+									<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
+								</properties>
+							</cloudHubDeployment>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>test</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.mule.tools.maven</groupId>
+						<artifactId>mule-maven-plugin</artifactId>
+						<version>${mule.maven.plugin.version}</version>
+						<extensions>true</extensions>
+						<configuration>
+							<cloudHubDeployment>
+								<applicationName>uho-test-uhub-sapi-teliyadu</applicationName>
+								<environment>test</environment>
+								<region>us-east-1 </region>
+								<workers>1</workers>
+								<workerType>MICRO</workerType>
+								<properties>
+									<env>test</env>
+									<api.id>18334067</api.id>
+									<anypoint.platform.client_id>${anypoint.platform.client_id}</anypoint.platform.client_id>
+									<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
+								</properties>
+							</cloudHubDeployment>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 	<build>
 		<plugins>
@@ -38,18 +96,9 @@
 						<muleVersion>4.4.0</muleVersion>
 						<username>${username}</username>
 						<password>${password}</password>
-						<applicationName>uho-dev-uhub-sapi-teliyadu</applicationName>
-						<environment>dev</environment>
-						<region>us-east-1</region>
-						<workers>1</workers>
-						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
 						<properties>
-							<env>dev</env>
 							<enc.key>${enc.key}</enc.key>
-							<api.id>18333962</api.id>
-							<anypoint.platform.client_id>${anypoint.platform.client_id}</anypoint.platform.client_id>
-							<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
 							<anypoint.platform.base_uri>https://anypoint.mulesoft.com</anypoint.platform.base_uri>
 							<anypoint.platform.analytics_base_uri>https://analytics-ingest.anypoint.mulesoft.com</anypoint.platform.analytics_base_uri>
 						</properties>

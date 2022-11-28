@@ -12,7 +12,7 @@
         </http:listener>
         <set-variable value="#[attributes.headers.'x-transaction-id' default uuid()]" doc:name="Set transactionId" doc:id="fb9aa11c-272f-4588-87af-d58c49fa9fab" variableName="transactionId"/>
 		<apikit:router config-ref="uhub-sapi-config" />
-        <error-handler ref="global-error-handlingError_Handler">
+        <error-handler ref="global-error-handler">
            
         </error-handler>
     </flow>
