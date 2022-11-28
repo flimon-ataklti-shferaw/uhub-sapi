@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<sub-flow name="insert-covid-case-sub-flow" doc:id="dcb34fd8-045e-4dcf-aae8-2dde0c711706" >
+		<logger level="INFO" doc:name="start log" doc:id="e9af7375-a4ef-45f8-a93b-bb60aa8b1330" message='transactionId: #[vars.transactionId], correlationId: #[vars.correlationId], message: "Before insert case database call", payload: #[payload]'/>
+		<db:insert doc:name="Insert Covid Case Master" doc:id="a7e0452a-7415-4f83-821e-676469cc2f6d" config-ref="Uhub_Database_Config" queryTimeout="60000" queryTimeoutUnit="MILLISECONDS">
+			<reconnect blocking="false" />
+			<db:sql ><![CDATA[insert into cvd_case_master(source, case_type, first_name, last_name, phone, email, date_of_birth, national_id, 
+national_id_type, street_address, city, state, postal, country, create_date, update_date, create_by, update_by) 
+values(:source, :case_type, :first_name, :last_name, :phone, :email, DATE_FORMAT(:date_of_birth, "%Y-%m-%d"), 
+:national_id, :national_id_type, :street_address, :city, :state, :postal, :country, 
+DATE_FORMAT(:create_date, "%Y-%m-%d"),DATE_FORMAT(:update_date, "%Y-%m-%d"), :create_by, :update_by)]]></db:sql>
+			<db:input-parameters ><![CDATA[#[payload]]]></db:input-parameters>
+		</db:insert>
+		<logger level="INFO" doc:name="end log" doc:id="b7be47f4-c161-4c5f-8569-cacc3b91b0c8" message='transactionId: #[vars.transactionId], correlationId: #[vars.correlationId], message: "Completed insert case database call"'/>
+	</sub-flow>
+	</mule>

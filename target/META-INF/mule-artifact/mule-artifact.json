@@ -7,6 +7,7 @@
     "implementations/health-check.xml",
     "global-error-handling.xml",
     "implementations/get-covid-case-by-national-id.xml",
+    "subflows/uhub-db.xml",
     "global-configuration.xml"
   ],
   "secureProperties": [],
@@ -21,7 +22,11 @@
       "exportedResources": [
         "log4j2.xml",
         "global-error-handling.xml",
+        "test.yaml",
         "uhub-sapi.xml",
+        "uat.yaml",
+        "dev.yaml",
+        "subflows/uhub-db.xml",
         "api/uhub-sapi.raml",
         "api/exchange_modules/99fdd732-6029-4a59-9011-d08a58f8b0c8/resource-types/1.0.1/resource-types.raml",
         "api/exchange_modules/99fdd732-6029-4a59-9011-d08a58f8b0c8/correlation-id-header/1.0.0/correlation-id-header.raml",
@@ -43,7 +48,8 @@
         "implementations/register-covid-case.xml",
         "implementations/update-covid-case.xml",
         "implementations/get-covid-case-by-national-id.xml",
-        "global-configuration.xml"
+        "global-configuration.xml",
+        "prod.yaml"
       ]
     }
   },
