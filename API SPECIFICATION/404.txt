@@ -1,7 +1,0 @@
-{
-  "code": 404,
-  "message": "No case found",
-  "description": "no case found for the given national id",
-  "dateTime": "2020-11-10T13:44:12.283-08:00",
-  "transactionId": "34B32520-31EE-47B4-907D-FA15869F3C4d"
-}

@@ -27,7 +27,6 @@
         "uat.yaml",
         "dev.yaml",
         "subflows/uhub-db.xml",
-        "aaa.properties",
         "api/uhub-sapi.raml",
         "api/exchange_modules/99fdd732-6029-4a59-9011-d08a58f8b0c8/resource-types/1.0.1/resource-types.raml",
         "api/exchange_modules/99fdd732-6029-4a59-9011-d08a58f8b0c8/correlation-id-header/1.0.0/correlation-id-header.raml",
