@@ -3,8 +3,8 @@ http:
 
 database:
   uhub:
-    host: "localhost"
-    port: "3306"
-    user: "root"
-    password: "![2DGX9aCwMw+Gb2wntnQoDw==]"
+    host: "mysql-98046-0.cloudclusters.net"
+    port: "19059"
+    user: "admin"
+    password: "![O6+HV4Tpmhcr4k8OSd39fg==]"
     database: "realtimeproject"

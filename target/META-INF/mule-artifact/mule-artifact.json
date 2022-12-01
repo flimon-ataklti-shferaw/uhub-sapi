@@ -12,7 +12,7 @@
   ],
   "secureProperties": [],
   "redeploymentEnabled": true,
-  "name": "com.mycompany:uhub-sapi:1.0.0-SNAPSHOT",
+  "name": "com.teliyadu:uhub-sapi:1.0.0-SNAPSHOT",
   "minMuleVersion": "4.4.0",
   "requiredProduct": "MULE_EE",
   "classLoaderModelLoaderDescriptor": {
@@ -22,6 +22,7 @@
       "exportedResources": [
         "log4j2.xml",
         "global-error-handling.xml",
+        "a.properties",
         "test.yaml",
         "uhub-sapi.xml",
         "uat.yaml",
