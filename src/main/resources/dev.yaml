@@ -1,6 +1,9 @@
 http:
   port: "8081"
 
+enc:
+  key: "a7d7j2jg20aj27ja"
+  
 database:
   uhub:
     host: "mysql-98046-0.cloudclusters.net"
