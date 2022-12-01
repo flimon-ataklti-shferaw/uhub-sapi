@@ -22,7 +22,6 @@
       "exportedResources": [
         "log4j2.xml",
         "global-error-handling.xml",
-        "a.properties",
         "test.yaml",
         "uhub-sapi.xml",
         "uat.yaml",
