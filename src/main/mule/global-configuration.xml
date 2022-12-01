@@ -22,4 +22,3 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
 	<api-gateway:autodiscovery apiId="${api.id}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="341ddbee-aadf-49aa-a7c4-e7235c50d2d0" flowRef="uhub-sapi-main" />
 	
 	</mule>
-s
