@@ -98,7 +98,7 @@
 						<password>${password}</password>
 						<objectStoreV2>true</objectStoreV2>
 						<properties>
-							<enc.key>${enc.key}</enc.key>
+							<enc.key>a7d7j2jg20aj27ja</enc.key>
 							<anypoint.platform.base_uri>https://anypoint.mulesoft.com</anypoint.platform.base_uri>
 							<anypoint.platform.analytics_base_uri>https://analytics-ingest.anypoint.mulesoft.com</anypoint.platform.analytics_base_uri>
 						</properties>
